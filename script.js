@@ -14,8 +14,20 @@ function divide(a, b){
     return a / b;
 }
 
-console.log(subtract(10,5));
-console.log(multiply(10,5));
-console.log(divide(10,5));
-console.log(add(10,5));
+let num1 = parseInt(prompt('Enter a number'));
+let sign = prompt('Enter a sign: pick between +, - , *, /');
+let num2 = parseInt(prompt('Enter a number'));
 
+
+if(sign === '+'){
+    alert(add(num1, num2));
+}
+else if(sign === '-'){
+    alert(subtract(num1, num2));
+}
+else if(sign === 'x'){
+    alert(multiply(num1, num2));
+}
+else if(sign === '/'){
+    alert(divide(num1, num2));
+}
