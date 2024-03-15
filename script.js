@@ -19,6 +19,7 @@ const num7 = document.querySelector('#num7');
 const num8 = document.querySelector('#num8');
 const num9 = document.querySelector('#num9');
 const num0 = document.querySelector('#num0');
+
 let total = 0;
 let operator = null;
 
@@ -180,9 +181,9 @@ equals.addEventListener('click', function(){
 });
 
 point.addEventListener('click', function(){
-    // Check if the input already contains a decimal point
+    
     if (!input.value.includes('.')) {
-        // If not, append the decimal point to the input value
+        
         input.value += this.textContent;
     }
 });
@@ -234,3 +235,5 @@ num9.addEventListener('click', function(){
 num0.addEventListener('click', function(){
     input.value += this.textContent;
 });
+
+

@@ -1,0 +1,52 @@
+*{
+    font-family: 'Titillium Web';
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0;
+}
+
+button{
+    height: 3em;
+    width: 3em;
+    font-size: 20px;
+    margin: 4px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 9px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: #49f273;
+}
+
+.container{
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: black;
+}
+
+.inside{
+    padding: 15px;
+}
+
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    height: 3em;
+    width: 12em;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
