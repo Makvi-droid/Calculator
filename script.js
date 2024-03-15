@@ -33,6 +33,8 @@ add.addEventListener('click', function(){
         }
         else if(operator === 'x'){
             total *= value;
+        } else{
+            total = value;
         }
         operator = '+';
         input.value = ''; // Reset the input field
@@ -51,6 +53,8 @@ subtract.addEventListener('click', function(){
         }
         else if(operator === 'x'){
             total *= value;
+        } else{
+            total = value;
         }
         operator = '-';
         input.value = ''; // Reset the input field
@@ -69,8 +73,10 @@ multiply.addEventListener('click', function(){
         }
         else if(operator === 'x'){
             total *= value;
+        } else{
+            total = value;
         }
-        operator = '-';
+        operator = 'x';
         input.value = ''; // Reset the input field
     } else {
         alert("Please enter a valid number.");
@@ -88,6 +94,8 @@ equals.addEventListener('click', function(){
         }
         else if(operator === 'x'){
             total *= value;
+        } else{
+            total = value;
         }
         input.value = total;
         total = 0; // Reset total for the next calculation
