@@ -33,7 +33,11 @@ add.addEventListener('click', function(){
         }
         else if(operator === 'x'){
             total *= value;
-        } else{
+        } 
+        else if(operator === '÷'){
+            total /= value;
+        }
+        else{
             total = value;
         }
         operator = '+';
@@ -53,7 +57,11 @@ subtract.addEventListener('click', function(){
         }
         else if(operator === 'x'){
             total *= value;
-        } else{
+        } 
+        else if(operator === '÷'){
+            total /= value;
+        }
+        else{
             total = value;
         }
         operator = '-';
@@ -73,7 +81,11 @@ multiply.addEventListener('click', function(){
         }
         else if(operator === 'x'){
             total *= value;
-        } else{
+        } 
+        else if(operator === '÷'){
+            total /= value;
+        }
+        else{
             total = value;
         }
         operator = 'x';
@@ -83,6 +95,32 @@ multiply.addEventListener('click', function(){
     }
     }
 );
+
+divide.addEventListener('click', function(){
+    const value = parseInt(input.value);
+    if(!isNaN(value)){
+        if(operator === '-'){
+            total -= value;
+        }
+        else if(operator === '+'){
+            total += value
+        }
+        else if(operator === 'x'){
+            total *= value
+        }
+        else if(operator === '÷'){
+            total /= value;
+        }
+        else{
+            total = value;
+        }
+        operator = '÷';
+        input.value = '';
+    }
+    else{
+        alert("Please enter a valid number.");
+    }
+});
 
 equals.addEventListener('click', function(){
     const value = parseInt(input.value);
@@ -94,7 +132,11 @@ equals.addEventListener('click', function(){
         }
         else if(operator === 'x'){
             total *= value;
-        } else{
+        } 
+        else if(operator === '÷'){
+            total /= value;
+        }
+        else{
             total = value;
         }
         input.value = total;
