@@ -19,7 +19,87 @@ const num7 = document.querySelector('#num7');
 const num8 = document.querySelector('#num8');
 const num9 = document.querySelector('#num9');
 const num0 = document.querySelector('#num0');
+let total = 0;
+let operator = null;
 
+
+add.addEventListener('click', function(){
+    const value = parseInt(input.value);
+    if (!isNaN(value)) {
+        if (operator === '-') {
+            total -= value;
+        } else if(operator === '+'){
+            total += value;
+        }
+        else if(operator === 'x'){
+            total *= value;
+        }
+        operator = '+';
+        input.value = ''; // Reset the input field
+    } else {
+        alert("Please enter a valid number.");
+    }
+});
+
+subtract.addEventListener('click', function(){
+    const value = parseInt(input.value);
+    if (!isNaN(value)) {
+        if (operator === '-') {
+            total -= value;
+        } else if(operator === '+'){
+            total += value;
+        }
+        else if(operator === 'x'){
+            total *= value;
+        }
+        operator = '-';
+        input.value = ''; // Reset the input field
+    } else {
+        alert("Please enter a valid number.");
+    }
+});
+
+multiply.addEventListener('click', function(){
+    const value = parseInt(input.value);
+    if(!isNaN(value)){
+        if (operator === '-') {
+            total -= value;
+        } else if(operator === '+'){
+            total += value;
+        }
+        else if(operator === 'x'){
+            total *= value;
+        }
+        operator = '-';
+        input.value = ''; // Reset the input field
+    } else {
+        alert("Please enter a valid number.");
+    }
+    }
+);
+
+equals.addEventListener('click', function(){
+    const value = parseInt(input.value);
+    if (!isNaN(value)) {
+        if (operator === '-') {
+            total -= value;
+        } else if(operator === '+'){
+            total += value;
+        }
+        else if(operator === 'x'){
+            total *= value;
+        }
+        input.value = total;
+        total = 0; // Reset total for the next calculation
+        operator = null;
+    } else {
+        alert("Please enter a valid number.");
+    }
+});
+
+point.addEventListener('click', function(){
+    input.value += this.textContent;
+});
 
 allClear.addEventListener('click', function(){
     input.value = "";
