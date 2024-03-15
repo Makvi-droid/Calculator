@@ -20,46 +20,51 @@ const num8 = document.querySelector('#num8');
 const num9 = document.querySelector('#num9');
 const num0 = document.querySelector('#num0');
 
-clear.addEventListener('click', function(){
+
+allClear.addEventListener('click', function(){
     input.value = "";
 });
 
+clear.addEventListener('click', function(){
+    input.value = input.value.slice(0, -1);
+});
+
 num1.addEventListener('click', function(){
-    input.value = this.textContent;
+    input.value += this.textContent;
 });
 
 num2.addEventListener('click', function(){
-    input.value = this.textContent;
+    input.value += this.textContent;
 });
 
 num3.addEventListener('click', function(){
-    input.value = this.textContent;
+    input.value += this.textContent;
 });
 
 num4.addEventListener('click', function(){
-    input.value = this.textContent;
+    input.value += this.textContent;
 });
 
 num5.addEventListener('click', function(){
-    input.value = this.textContent;
+    input.value += this.textContent;
 });
 
 num6.addEventListener('click', function(){
-    input.value = this.textContent;
+    input.value += this.textContent;
 });
 
 num7.addEventListener('click', function(){
-    input.value = this.textContent;
+    input.value += this.textContent;
 });
 
 num8.addEventListener('click', function(){
-    input.value = this.textContent;
+    input.value += this.textContent;
 });
 
 num9.addEventListener('click', function(){
-    input.value = this.textContent;
+    input.value += this.textContent;
 });
 
 num0.addEventListener('click', function(){
-    input.value = this.textContent;
+    input.value += this.textContent;
 });
