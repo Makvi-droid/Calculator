@@ -24,7 +24,7 @@ let operator = null;
 
 
 add.addEventListener('click', function(){
-    const value = parseInt(input.value);
+    const value = parseFloat(input.value);
     if (!isNaN(value)) {
         if (operator === '-') {
             total -= value;
@@ -41,14 +41,14 @@ add.addEventListener('click', function(){
             total = value;
         }
         operator = '+';
-        input.value = ''; // Reset the input field
+        input.value = ''; 
     } else {
         alert("Please enter a valid number.");
     }
 });
 
 subtract.addEventListener('click', function(){
-    const value = parseInt(input.value);
+    const value = parseFloat(input.value);
     if (!isNaN(value)) {
         if (operator === '-') {
             total -= value;
@@ -65,14 +65,14 @@ subtract.addEventListener('click', function(){
             total = value;
         }
         operator = '-';
-        input.value = ''; // Reset the input field
+        input.value = ''; 
     } else {
         alert("Please enter a valid number.");
     }
 });
 
 multiply.addEventListener('click', function(){
-    const value = parseInt(input.value);
+    const value = parseFloat(input.value);
     if(!isNaN(value)){
         if (operator === '-') {
             total -= value;
@@ -89,7 +89,7 @@ multiply.addEventListener('click', function(){
             total = value;
         }
         operator = 'x';
-        input.value = ''; // Reset the input field
+        input.value = ''; 
     } else {
         alert("Please enter a valid number.");
     }
@@ -97,7 +97,7 @@ multiply.addEventListener('click', function(){
 );
 
 divide.addEventListener('click', function(){
-    const value = parseInt(input.value);
+    const value = parseFloat(input.value);
     if(!isNaN(value)){
         if(operator === '-'){
             total -= value;
@@ -122,8 +122,37 @@ divide.addEventListener('click', function(){
     }
 });
 
+remainder.addEventListener('click', function(){
+    const value = parseFloat(input.value);
+    if(!isNaN(value)){
+        if(operator === '-'){
+            total -= value;
+        }else if(operator === '+'){
+            total += value;
+        }
+        else if(operator === 'x'){
+            total *= value;
+        } 
+        else if(operator === '÷'){
+            total /= value;
+        }
+        else if(operator === '%'){
+            total %= value;
+        }
+        else{
+            total = value;
+        }
+        operator = '%';
+        input.value = '';
+    }
+    else{
+        alert("Please enter a valid number.");
+    }
+    
+});
+
 equals.addEventListener('click', function(){
-    const value = parseInt(input.value);
+    const value = parseFloat(input.value);
     if (!isNaN(value)) {
         if (operator === '-') {
             total -= value;
@@ -136,11 +165,14 @@ equals.addEventListener('click', function(){
         else if(operator === '÷'){
             total /= value;
         }
+        else if(operator === '%'){
+            total %= value;
+        }
         else{
             total = value;
         }
         input.value = total;
-        total = 0; // Reset total for the next calculation
+        total = 0; 
         operator = null;
     } else {
         alert("Please enter a valid number.");
@@ -148,7 +180,11 @@ equals.addEventListener('click', function(){
 });
 
 point.addEventListener('click', function(){
-    input.value += this.textContent;
+    // Check if the input already contains a decimal point
+    if (!input.value.includes('.')) {
+        // If not, append the decimal point to the input value
+        input.value += this.textContent;
+    }
 });
 
 allClear.addEventListener('click', function(){
